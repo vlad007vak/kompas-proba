@@ -1,0 +1,5 @@
+# Jednakowe końce linii na wszystkich laptopach (mniej konfliktów w git)
+* text=auto eol=lf
+*.ico binary
+*.png binary
+*.jpg binary
