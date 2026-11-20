@@ -40,7 +40,16 @@ CI (lint + build) ──► зелёный?
 1. Читаем задание **и критерии оценки с весами**. Человек 4 выписывает их в чек-лист (Issue «Kryteria jury»).
 2. Список фич: MVP + «если успеем». Главный ИИ делит их на **3 блока** (Влад / Макс / Андрей), Влад утверждает.
 3. **Контракт:** общие типы в `src/types/` и список API (`POST /api/... → {...}`). Влад с главным ИИ коммитят это **первым**, остальные начинают от этого коммита.
-4. Влад: репозиторий из шаблона → `bash scripts/setup-repo.sh` → добавить всех → `vercel link` + переменные окружения → первый деплой.
+4. Влад: репозиторий из шаблона → `bash scripts/setup-repo.sh` → добавить всех → Vercel (проверено на пробном прогоне):
+   ```bash
+   vercel link --yes --project <имя>                    # создаёт проект и подключает GitHub
+   git checkout .gitignore                              # vercel link дописывает .env* и ломает !.env.example
+   vercel project protection disable <имя> --sso        # иначе preview-ссылки открываются только после входа в Vercel
+   # ключи ИИ (значение вводится в ответ на запрос / через stdin; ключи всех троих через запятую):
+   vercel env add GROQ_API_KEY --environment production --sensitive   # и то же для preview
+   vercel env add GEMINI_API_KEY --environment production --sensitive # и то же для preview
+   ```
+   Модели по умолчанию уже в коде (`qwen/qwen3.8-27b`, `gemini-3.5-flash-lite`). После добавления переменных — передеплой: `vercel redeploy https://<имя>.vercel.app`.
 5. Главный ИИ создаёт задачи в GitHub Issues (метки `zadanie` + имя исполнителя).
 6. Человек 4 идёт к менторам партнёра задания и проверяет идею.
 

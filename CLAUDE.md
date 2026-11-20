@@ -45,7 +45,8 @@ The jury opens the **deployed app on Vercel** and tests it themselves, so `main`
 
 ## Task protocol (how work flows)
 1. **Find your work:** `gh issue list --label zadanie --label <your-name> --state open`
-   (`vlad` / `maks` / `andrey`). Read the card fully: `gh issue view <N> --comments`.
+   (`vlad` / `maks` / `andrey`). Read the card fully: `gh issue view <N> --json title,body,labels,comments`
+   (in Claude Code `gh issue view <N> --comments` prints ONLY comments, without the card body).
 2. **One task = one branch = one PR.** Branch: `<name>/<N>-<short-slug>`, e.g. `maks/12-kreator-kryteriow`.
 3. Stay inside the card's "Twoje pliki". Anything under "Nie ruszaj" is off-limits.
 4. **Unclear card or blocked?** Don't guess. Comment on the issue (`gh issue comment <N> --body "..."`) starting with
@@ -58,7 +59,7 @@ The jury opens the **deployed app on Vercel** and tests it themselves, so `main`
    - Small PR, only your own folders, CI green → you may merge: `gh pr merge --squash --delete-branch`.
    - PR touches shared files/contract, or is large (new page / > ~300 changed lines) → add label `review-needed`
      (`gh pr edit --add-label review-needed`) and **don't merge** – the lead AI reviews, Vlad merges.
-   - Review comments arrive on the PR: `gh pr view <N> --comments`; fix them on the same branch.
+   - Review comments arrive on the PR: `gh pr view <N> --json title,body,comments,reviews`; fix them on the same branch.
 8. Testers' reports are issues labelled `bug`: fix the ones in your own folders first, reference them in the PR (`Fixes #N`).
 
 ## Team rules – three laptops (IMPORTANT)

@@ -7,7 +7,7 @@
 | Что | Как проверить | Где взять |
 |---|---|---|
 | Git | `git --version` | https://git-scm.com |
-| Node.js 24 LTS | `node -v` → v24.x | https://nodejs.org |
+| Node.js 24 LTS | `node -v` → v24.x | MSI с https://nodejs.org/dist/latest-v24.x/ (`winget` LTS уже ставит Node 26!) |
 | GitHub CLI | `gh --version` | `winget install GitHub.cli` |
 | Claude Code | `claude --version` | уже есть |
 | VS Code (по желанию) | — | `winget install Microsoft.VisualStudioCode` |
@@ -19,6 +19,7 @@
 git config --global user.name "Имя Фамилия"
 git config --global user.email "почта@пример.pl"
 gh auth login        # GitHub.com → HTTPS → Login with a web browser
+gh auth setup-git    # чтобы git брал вход из gh (на Windows иначе спрашивает пароль)
 ```
 Сообщить Владу свой **логин на GitHub** — он добавит тебя в репозиторий. Принять приглашение
 (придёт на почту или: `gh api user/repository_invitations`).
