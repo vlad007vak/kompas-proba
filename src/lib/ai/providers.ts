@@ -25,11 +25,11 @@ const PROVIDER_IDS: readonly ProviderId[] = ["groq", "gemini", "ollama"];
 const DEFAULTS: Record<ProviderId, { baseURL: string; model: string }> = {
   groq: {
     baseURL: "https://api.groq.com/openai/v1",
-    model: "llama-3.3-70b-versatile",
+    model: "qwen/qwen3.8-27b",
   },
   gemini: {
     baseURL: "https://generativelanguage.googleapis.com/v1beta/openai/",
-    model: "gemini-2.5-flash",
+    model: "gemini-3.5-flash-lite",
   },
   ollama: {
     baseURL: "http://localhost:11434/v1",
