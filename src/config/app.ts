@@ -3,11 +3,12 @@
  * TODO(zadanie): po wyborze zadania podmień wartości poniżej.
  */
 export const APP_CONFIG = {
-  name: "Nazwa projektu",
-  tagline: "Krótkie hasło: jaki problem rozwiązujemy i dla kogo.",
+  name: "Kompas Kompetencji",
+  tagline:
+    "Obiektywna ocena okresowa i rozmowa o rozwoju – wsparcie dla przełożonych w służbie cywilnej.",
   description:
-    "Opis aplikacji w 1–2 zdaniach. Ten tekst trafia też do metadanych strony (SEO).",
-  teamName: "Nazwa zespołu",
-  taskName: "Nazwa zadania HackNation",
+    "Asystent oceny okresowej członków korpusu służby cywilnej: dobór kryteriów, ocena zgodna z przepisami, rozmowa i plan rozwoju.",
+  teamName: "Zespół (wersja próbna)",
+  taskName: "Kompas Kompetencji",
   year: 2026,
 } as const;
