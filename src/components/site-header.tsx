@@ -5,6 +5,7 @@ import { APP_CONFIG } from "@/config/app";
 
 // TODO(zadanie): uzupełnij nawigację o strony aplikacji.
 const NAV = [
+  { href: "/kreator", label: "Kreator kryteriów" },
   { href: "/#jak-to-dziala", label: "Jak to działa" },
   { href: "/#asystent", label: "Asystent AI" },
 ];
